@@ -1,0 +1,37 @@
+{
+  "name": "json-patch-cli",
+  "version": "0.0.1",
+  "description": "cli patcher for json files",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "json-patch-cli": "cli.js"
+  },
+  "scripts": {
+    "test": "node test/index.js",
+    "test-watch": "nodemon test/index.js -- --ignore **/temp --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakobrosenberg/json-patch-cli.git"
+  },
+  "keywords": [
+    "json",
+    "cli",
+    "patch",
+    "edit",
+    "modify"
+  ],
+  "author": "jakobrosenberg@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakobrosenberg/json-patch-cli/issues"
+  },
+  "homepage": "https://github.com/jakobrosenberg/json-patch-cli#readme",
+  "dependencies": {
+    "commander": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
