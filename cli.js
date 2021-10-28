@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { program } from 'commander'
-import { push, set, unset } from './index.js'
+const { program } = require('commander')
+const { push, set, unset } = require('./index.js')
 
 program
     .command('set')

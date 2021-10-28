@@ -1,8 +1,8 @@
-import assert from 'assert'
-import { mkdirSync, readFileSync, writeFileSync } from 'fs'
-import { set, unset, push } from "../index.js";
-import { test, __dirname } from "./util.js";
-import { execSync } from 'child_process'
+const assert = require('assert')
+const { mkdirSync, readFileSync, writeFileSync } = require('fs')
+const { set, unset, push } = require("../index.js")
+const { test } = require("./util.js")
+const { execSync } = require('child_process')
 
 
 const getJSON = () => JSON.parse(readFileSync(__dirname + '/temp/package.json', 'utf-8'))
@@ -43,7 +43,7 @@ test('push', () => {
 test('cli', () => {
     const cmd = `node ../cli set ${exampleFile} export "{\\"esm\\": \\".\\"}"`
     execSync(cmd, { cwd: __dirname, encoding: 'utf-8' })
-    expect.export = {esm: '.'}
+    expect.export = { esm: '.' }
     assert.deepEqual(getJSON(), expect)
-    
+
 })

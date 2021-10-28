@@ -1,4 +1,4 @@
-export const test = async (msg, cb) => {
+const test = async (msg, cb) => {
     try {
         await cb()
         console.log(msg, '✅')
@@ -8,7 +8,4 @@ export const test = async (msg, cb) => {
     }
 }
 
-import { dirname } from 'path';
-import { fileURLToPath, URL } from 'url';
-
-export const __dirname = dirname(fileURLToPath(import.meta.url))
+module.exports = { test }

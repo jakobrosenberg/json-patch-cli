@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'fs'
+const { readFileSync, writeFileSync } = require('fs')
 
 const sanitizeJson = value => {
     try { value = JSON.parse(value) } catch (err) { }
@@ -20,13 +20,14 @@ const editFile = callback => (file, rawPath, value) => {
     writeFileSync(file, JSON.stringify(json, null, 2))
 }
 
-export const _set = (target, key, value) => target[key] = value
+const _set = (target, key, value) => target[key] = value
 
-export const _unset = (target, key) => delete (target[key])
+const _unset = (target, key) => delete (target[key])
 
-export const _push = (target, key, value) => target[key].push(value)
+const _push = (target, key, value) => target[key].push(value)
 
-export const unset = editFile(_unset)
-export const set = editFile(_set)
-export const push = editFile(_push)
+const unset = editFile(_unset)
+const set = editFile(_set)
+const push = editFile(_push)
 
+module.exports = { _set, _unset, _push, unset, set, push }
