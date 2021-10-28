@@ -1,6 +1,6 @@
 {
   "name": "json-patch-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "cli patcher for json files",
   "main": "index.js",
   "bin": {
